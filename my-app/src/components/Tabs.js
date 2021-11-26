@@ -1,14 +1,25 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Tabs, Tab} from 'react-bootstrap'
 import {Menu} from './MenuScreen'
 function MenuTabs({sendMsg}) {
+
     const [key, setKey] = useState('all');
-  
+    const handleSelect = (k) => 
+    {
+      setKey(k);
+      let pos = document.documentElement.scrollTop || document.body.scrollTop;
+      if(pos > 260)
+      window.scrollTo({
+            top: 230,
+            left: 0,
+            behavior: "smooth"
+          })
+    }
     return (
       <Tabs
         id="controlled-tab-example"
         activeKey={key}
-        onSelect={(k) => setKey(k)}
+        onSelect={(k) => handleSelect(k)}
         className="mb-3 bg-light"
         style={{position: "sticky",  top: "4.5rem", zIndex:"1000"}}
       >

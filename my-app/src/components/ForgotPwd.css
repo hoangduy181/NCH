@@ -1,10 +1,13 @@
 .otp-input input {
-    width: 5vw!important;
+    width: 4vw!important;
     height: 5vw!important;
-    margin: auto;
+    margin: auto!important;
+    border: 1px solid #cccccc ;
+    padding: 0!important;
 }
 .otp-input {
     padding: 1px;
+    margin: auto!important; ;
 }
 
 .otp-wrapper {

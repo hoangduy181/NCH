@@ -50,7 +50,7 @@ function App() {
     
     <Router>
       <Header isLogged={isLogged} sendMsg={sendMsg} handleLogOut={handleLogOut}/>
-        <body style={{paddingTop: "5rem"}}>
+        <body style={{paddingTop: "4.5rem"}}>
         <ToastMsg toastMsg={toastMsg} closeToast={closeToast} variant={variant}/>
         <main className='py-3'>
           <Container>

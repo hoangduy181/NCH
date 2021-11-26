@@ -94,6 +94,13 @@ function CartScreen({sendMsg}) {
     updateTotal()
   }
 
+  function handleClear() {
+    var data = []
+    localStorage.setItem('Cart', JSON.stringify(data))
+    SetcartItems(data)
+    updateTotal()
+    sendMsg('Deleted successfully', 'warning')
+  }
   return (
     <Col>
       <Row>
@@ -108,11 +115,19 @@ function CartScreen({sendMsg}) {
       <br/>
       <Row>
         <Col xs={12} sm={12} md={9}>
+          <Row>
+          <Col md={10}><h1>YOUR CART</h1></Col>
+          <Col className='d-flex justify-content-end'>
+            <Button className='my-auto' style={{height: "2.5rem"}} onClick={()=>handleClear()} disabled={cartItems.length === 0}>
+              Clear
+            </Button>
+          </Col>
+            </Row>
         <Scrollbars
           autoHeight
           autoHeightMin={500}
         >
-          <h1>Cart</h1>
+
           {cartItems.length === 0 ? (<h2>
             Your cart is empty
           </h2>) : (<CartList cartItems={cartItems} removeItem={removeItem} setTotal={updateTotal} sendMsg={sendMsg}/>)

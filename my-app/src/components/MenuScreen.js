@@ -9,8 +9,14 @@ import MenuTabs from "./Tabs";
 import Scrollbars from "react-custom-scrollbars";
 
 
-function Menu({ sendMsg, cataId = '' }) {
-  
+function Menu({ sendMsg, cataId = ''}) {
+  // useEffect(() => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     left: 0,
+  //     behavior: "smooth"
+  //   })
+  // }, [])
   let products = dishes.slice()
   if (cataId !== '') products = dishes.filter(e => e.category === cataId)
 
@@ -56,7 +62,7 @@ function Menu({ sendMsg, cataId = '' }) {
         <Row>
 
           {products.map((product) => (
-            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+            <Col key={product._id} xs ={12} sm={6} md={4} lg={3} xl={3}>
               <ProductCard product={product} setItem={setItem} setLgShow={setLgShow} addToCartHandler={addToCartHandler} />
             </Col>
           ))}
