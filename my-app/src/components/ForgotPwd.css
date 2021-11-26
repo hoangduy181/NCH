@@ -1,0 +1,14 @@
+.otp-input input {
+    width: 5vw!important;
+    height: 5vw!important;
+    margin: auto;
+}
+.otp-input {
+    padding: 1px;
+}
+
+.otp-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}

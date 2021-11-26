@@ -1,7 +1,30 @@
-import React, {useEffect } from "react";
+import React, {useEffect, useState } from "react";
 import { FloatingLabel, Form, Modal, Row, Col, Card ,Container, Button} from "react-bootstrap"
-import { Link } from "react-router-dom";
-function SignInScreen() {
+import { Link, useNavigate } from "react-router-dom";
+function SignInScreen({sendMsg, handleLogIn}) {
+
+let userAccount = JSON.parse(localStorage.getItem('DatabaseUser'))
+
+  const navigate = useNavigate()
+  const handleSignIn = (phoneNumber, password) => {
+    if (phoneNumber === userAccount.phoneNumber && password === userAccount.password)
+    {
+      handleLogIn()
+      navigate('/menu')
+    }
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(event.target[0].value)
+    console.log(event.target[1].value)
+   console.log(userAccount)
+   
+    handleSignIn(event.target[0].value, event.target[1].value)
+
+  }
+
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -29,6 +52,7 @@ function SignInScreen() {
             <h3>SIGN IN</h3>
           </Card.Header>
           <Card.Body>
+            <Form onSubmit={handleSubmit}>
             <FloatingLabel
               controlId="floatingInput"
               label="Phonenumber"
@@ -43,11 +67,13 @@ function SignInScreen() {
               <Link to='/signup' className='nav-link mb-1'><small>Sign up</small></Link>
               <Link to='/forgotpwd' className='nav-link mb-1'><small>Forgot password?</small></Link>
             </div>
-          </Card.Body>
-          <Button type= 'submit'  className='btn-block mx-auto'>
+          <Col className='d-flex justify-content-center'>
+          <Button type = 'submit' className='m-3 mt-0 mb-1 btn-outline-info' variant='light' >
             Sign in
           </Button>
-          <hr/>
+          </Col>
+            </Form>
+          </Card.Body>
           <h5 className='text-center'>Or</h5>
           <Button className='m-3 mt-0 mb-1 btn-outline-info' variant='light' >
           <i class="fab fa-facebook-f p-1"></i>
@@ -57,9 +83,6 @@ function SignInScreen() {
           <i class="fab fa-google p-1"></i>
             Login with Google
           </Button>
-
-          <Card.Body>
-          </Card.Body>
         </Card>
       </Col>
     </Row>

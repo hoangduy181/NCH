@@ -20,9 +20,7 @@ function Menu({ sendMsg, cataId = '' }) {
 
   const [itemToShow, setItem] = useState(temp);
 
-  if (localStorage.getItem('Cart') === null) {
-    localStorage.setItem('Cart', '[]')
-  }
+
 
   function addToCartHandler(curProd) {
     const data = JSON.parse(localStorage.getItem('Cart'));

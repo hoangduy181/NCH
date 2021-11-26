@@ -33,6 +33,9 @@ function MenuTabs({sendMsg}) {
         <Tab eventKey="dimsum" title="Dimsum">
         <Menu sendMsg={sendMsg} cataId='Dimsum'/>
         </Tab>
+        <Tab eventKey="salad" title="Salad">
+        <Menu sendMsg={sendMsg} cataId='Salad'/>
+        </Tab>
       </Tabs>
     );
   }

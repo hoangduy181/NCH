@@ -10,9 +10,31 @@ import { useState } from 'react';
 import {Toast, Row, Col, Button} from 'react-bootstrap'
 import ToastMsg from './components/ToastMsg';
 import CheckOutScreen from './components/CheckOutScreen';
-import Scrollbars from 'react-custom-scrollbars';
+import ForgotPwd from './components/ForgotPwd';
+
 
 function App() {
+
+  const [isLogged, setLogIn] = useState(false)
+
+  const handleLogOut = () => {
+    console.log("handle logout")
+    if (isLogged === true)
+    setLogIn(false)
+  }
+
+  const handleLogIn = () => {
+    if(isLogged === false)
+    setLogIn(true)
+  }
+  
+  if (localStorage.getItem('Cart') === null) {
+    localStorage.setItem('Cart', '[]')
+  }
+
+  if (localStorage.getItem('DatabaseUser') === null) {
+    localStorage.setItem('DatabaseUser', '{"phoneNumber": "0394844790", "password": "@123456"}')
+  }
 
   const [toastMsg, setToastMsg] = useState(null)
   const [variant, setToastVariant] = useState('success')
@@ -27,16 +49,17 @@ function App() {
 
     
     <Router>
-      <Header/>
+      <Header isLogged={isLogged} sendMsg={sendMsg} handleLogOut={handleLogOut}/>
         <body style={{paddingTop: "5rem"}}>
         <ToastMsg toastMsg={toastMsg} closeToast={closeToast} variant={variant}/>
         <main className='py-3'>
           <Container>
             <Routes>
+              <Route path = "/forgotpwd" element={<ForgotPwd/>}/>
               <Route path = "/checkout" element={<CheckOutScreen/>}/>
               <Route path ="/menu" element={<MenuScreen sendMsg={sendMsg}/>} exact/>
               <Route path ="/cart" element={<CartScreen sendMsg={sendMsg}/>} exact/>
-              <Route path ="/signin" element={<SignInScreen sendMsg={sendMsg}/>} exact/>
+              <Route path ="/signin" element={<SignInScreen sendMsg={sendMsg} handleLogIn={handleLogIn}/>} exact/>
             </Routes>
           </Container>
         </main>
