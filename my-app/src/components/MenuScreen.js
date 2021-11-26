@@ -42,7 +42,7 @@ function Menu({ sendMsg, cataId = '' }) {
       }
     }
     localStorage.setItem('Cart', JSON.stringify(data))
-    sendMsg("Successfully added to cart!")
+    sendMsg("Successfully added to cart!",'success')
   }
   return (
     <>
