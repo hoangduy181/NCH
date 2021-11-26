@@ -10,7 +10,7 @@ function getProductById({ item }) {
   return product;
 }
 
-function CartItem({ item, removeItem, setTotal }) {
+function CartItem({ item, removeItem, setTotal , sendMsg}) {
   let product = products.find((p) => p._id === item._id)
   console.log(product)
   return (
@@ -31,7 +31,9 @@ function CartItem({ item, removeItem, setTotal }) {
         <Col xs={3} sm={3} md={1} className='mx-auto'>
           <Button
             variant="outline-primary"
-            onClick={() => { removeItem(item) }}>
+            onClick={() => {
+              removeItem(item)
+              sendMsg('Deleted successfully', 'warning')}}>
             <i class="fa-solid fa-trash-can"></i>
           </Button>
         </Col>
@@ -40,18 +42,18 @@ function CartItem({ item, removeItem, setTotal }) {
   )
 }
 
-function CartList({ cartItems, removeItem, setTotal }) {
+function CartList({ cartItems, removeItem, setTotal , sendMsg}) {
   return (
     <ListGroup variant='flush'>
       {cartItems.map((item) => (
-        <CartItem item={item} removeItem={removeItem} setTotal={setTotal} />
+        <CartItem item={item} removeItem={removeItem} setTotal={setTotal} sendMsg={sendMsg}/>
       ))}
     </ListGroup>
   )
 }
 
 
-function CartScreen() {
+function CartScreen({sendMsg}) {
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -113,7 +115,7 @@ function CartScreen() {
           <h1>Cart</h1>
           {cartItems.length === 0 ? (<h2>
             Your cart is empty
-          </h2>) : (<CartList cartItems={cartItems} removeItem={removeItem} setTotal={updateTotal} />)
+          </h2>) : (<CartList cartItems={cartItems} removeItem={removeItem} setTotal={updateTotal} sendMsg={sendMsg}/>)
           }
         </Scrollbars>
         </Col>

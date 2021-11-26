@@ -1,14 +1,14 @@
 import React from "react";
 import { ToastContainer, Toast } from "react-bootstrap";
 
-function ToastMsg({toastMsg, closeToast}) {
+function ToastMsg({toastMsg, closeToast, variant}) {
   return (
     <Toast  show={toastMsg !== null}
             onClose={closeToast}
             style={{position: "fixed", top: "10vh", right: "0", zIndex: "100000"}}
             delay={1000}
             autohide
-            bg='success'
+            bg={variant}
             >
       <Toast.Header>
         <strong className="me-auto">NCH</strong>

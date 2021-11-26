@@ -51,7 +51,7 @@ function ProductModal({ lgShow, product, setLgShow, sendMsg }) {
       }
     }
     localStorage.setItem('Cart', JSON.stringify(data))
-    sendMsg("succesfully added to cart!")
+    sendMsg("succesfully added to cart!",'success')
     setNumber(1)
   }
 

@@ -15,12 +15,13 @@ import Scrollbars from 'react-custom-scrollbars';
 function App() {
 
   const [toastMsg, setToastMsg] = useState(null)
-  
+  const [variant, setToastVariant] = useState('success')
   const closeToast = () => setToastMsg(null)
 
-  const sendMsg = (msg) => {
+  const sendMsg = (msg, variant) => {
     setToastMsg(null)   
     setToastMsg(msg)
+    setToastVariant(variant)
   }
 	return (
 
@@ -28,7 +29,7 @@ function App() {
     <Router>
       <Header/>
         <body style={{paddingTop: "5rem"}}>
-        <ToastMsg toastMsg={toastMsg} closeToast={closeToast}/>
+        <ToastMsg toastMsg={toastMsg} closeToast={closeToast} variant={variant}/>
         <main className='py-3'>
           <Container>
             <Routes>
