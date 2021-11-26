@@ -32,17 +32,21 @@ function SignInScreen() {
             <FloatingLabel controlId="floatingPassword" label="Password">
               <Form.Control type="password" placeholder="Password" />
             </FloatingLabel>
+            <div className="d-flex justify-content-between">
+              <Link to='/signup' className='nav-link mb-1'><small>Sign up</small></Link>
+              <Link to='/forgotpwd' className='nav-link mb-1'><small>Forgot password?</small></Link>
+            </div>
           </Card.Body>
           <Button type= 'submit'  className='btn-block mx-auto'>
             Sign in
           </Button>
           <hr/>
           <h5 className='text-center'>Or</h5>
-          <Button className='m-3 mt-0 mb-1' variant='info'>
+          <Button className='m-3 mt-0 mb-1 btn-outline-info' variant='light' >
           <i class="fab fa-facebook-f p-1"></i>
           Login with Facebook
           </Button>
-          <Button className='m-3 mt-1 mb-0' variant='dark'>
+          <Button className='m-3 mt-1 mb-0 btn-outline-secondary' variant='dark'>
           <i class="fab fa-google p-1"></i>
             Login with Google
           </Button>

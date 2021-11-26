@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, Navbar, Nav } from 'react-bootstrap'
+import { Container, Navbar, Nav, Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-
+import logo from '../logo.png'
 
 function Header() {
   return (
@@ -9,7 +9,15 @@ function Header() {
       <Navbar variant="dark" bg="danger" expand="lg" collapseOnSelect fixed="top">
         <Container>
           <Link to="/home" className='nav-link'>
-            <Navbar.Brand href="/home" >NCH</Navbar.Brand>
+            <Navbar.Brand href="/home" >
+            <img
+              src={logo}
+              width="25"
+              height="25"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+            NCH</Navbar.Brand>
           </Link>
 
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -27,7 +35,7 @@ function Header() {
               </Link>
 
             </Nav>
-            <Nav              
+            <Nav
               className="ml-auto my-2 my-lg-0 justify-content-end"
               style={{ maxHeight: '100px' }}
               navbarScroll>
