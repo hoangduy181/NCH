@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Row, Col, Button, Form, Container, ToggleButton, ButtonGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SeatChoose from "./SeatChoose";
 import { getProductById } from "./CartScreen"
 import { useNavigate } from 'react-router-dom'
 function CheckOutScreen({ }) {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    })
+  }, [])
   let navigate = useNavigate();
   const cartItems = JSON.parse(localStorage.getItem('Cart'))
   const total = cartItems.reduce((acc, item) => acc + item.qty * getProductById({ item }).price, 0)

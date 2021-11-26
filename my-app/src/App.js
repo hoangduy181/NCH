@@ -5,7 +5,6 @@ import MenuScreen from './components/MenuScreen';
 import { Container } from 'react-bootstrap';
 import './bootstrap.min.css'
 import CartScreen from './components/CartScreen';
-import cartItems from './cartItem';
 import SignInScreen from './components/SignInScreen'; 
 import { useState } from 'react';
 import {Toast, Row, Col, Button} from 'react-bootstrap'
@@ -24,12 +23,10 @@ function App() {
     setToastMsg(msg)
   }
 	return (
-    <Scrollbars 
-      style={{height: "100vh"}}
-    universal>
+
     
-    <Router>  
-        <Header/>
+    <Router>
+      <Header/>
         <body style={{paddingTop: "5rem"}}>
         <ToastMsg toastMsg={toastMsg} closeToast={closeToast}/>
         <main className='py-3'>
@@ -46,7 +43,6 @@ function App() {
         <Footer/>
         
     </Router>
-    </Scrollbars>
 	);
 }
 

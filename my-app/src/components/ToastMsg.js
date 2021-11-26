@@ -5,7 +5,7 @@ function ToastMsg({toastMsg, closeToast}) {
   return (
     <Toast  show={toastMsg !== null}
             onClose={closeToast}
-            style={{position: "fixed", top: "5vh", right: "0", zIndex: "100000"}}
+            style={{position: "fixed", top: "10vh", right: "0", zIndex: "100000"}}
             delay={1000}
             autohide
             bg='success'

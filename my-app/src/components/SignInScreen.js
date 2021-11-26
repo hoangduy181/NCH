@@ -1,7 +1,14 @@
-import React from "react";
+import React, {useEffect } from "react";
 import { FloatingLabel, Form, Modal, Row, Col, Card ,Container, Button} from "react-bootstrap"
 import { Link } from "react-router-dom";
 function SignInScreen() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    })
+  }, [])
   return (
     <Container>
             <Row>

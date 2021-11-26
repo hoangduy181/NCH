@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, ListGroup, Image, Button, ToggleButton, Card, Container } from "react-bootstrap"
 import { Link, useNavigate } from "react-router-dom";
 import NumberSpinner from "./NumberSpinner";
@@ -52,6 +52,13 @@ function CartList({ cartItems, removeItem, setTotal }) {
 
 
 function CartScreen() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    })
+  }, [])
   let navigate = useNavigate()
   var [cartItems, SetcartItems] = useState(() => {
     return JSON.parse(localStorage.getItem('Cart'))

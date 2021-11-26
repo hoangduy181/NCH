@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { Button, Modal, Col, Row, Container, Form } from "react-bootstrap";
 import CarouselBar from "./Carousel";
 import ProductCard from "./ProductCard";
@@ -10,6 +10,7 @@ import Scrollbars from "react-custom-scrollbars";
 
 
 function Menu({ sendMsg, cataId = '' }) {
+  
   let products = dishes.slice()
   if (cataId !== '') products = dishes.filter(e => e.category === cataId)
 
@@ -69,6 +70,13 @@ function Menu({ sendMsg, cataId = '' }) {
 }
 
 function MenuScreen({ sendMsg }) {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    })
+  }, [])
   return (
     <>
       <Row>
