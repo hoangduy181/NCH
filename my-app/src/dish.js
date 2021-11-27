@@ -696,6 +696,19 @@ const dishes = [
       numReviews: 35,
       mon_an_kem: ["Rau trộn", "Kim chi carrot"],
     },
+    {
+      _id: 'dimsum04',
+      name: 'Dimsum hải sản',
+      image: '/images/dimsum05.png',
+      ingredients:
+        'Bột gạo, tôm, cua, mực',
+      category: 'Dimsum',
+      price: 55.000,
+      countInStock: 4,
+      rating: 5,
+      numReviews: 24,
+      mon_an_kem: ["Rau trộn", "Kim chi carrot"],
+    },
 
     /*---------------------------*/
     {
