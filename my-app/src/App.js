@@ -34,17 +34,17 @@ function App() {
   })
 
   const handleLogOut = () => {
-    sendMsg('Logged out!', 'success')
-    console.log("handle logout")
     if (isLogged === true) {
+      sendMsg('Logged out!', 'success')
+      console.log("handle logout")
       localStorage.setItem('User', 'false')
       setLogIn(false)
     }
   }
   
   const handleLogIn = () => {
-  sendMsg('Logged in succesfully!', 'success')
-  if(isLogged === false) {
+    if(isLogged === false) {
+    sendMsg('Logged in succesfully!', 'success')
     localStorage.setItem('User', 'true')
     setLogIn(true) }
   }
