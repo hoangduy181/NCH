@@ -768,7 +768,7 @@ const dishes = [
       name: 'Salad thịt',
       image: '/images/salad05.png',
       ingredients:
-        'Rau các loại, cà chua, sốt Mayonaise, thịt',
+        'Rau các loại, cà chua, sốt Mayonaise, thịt, yến mạch, đậu phụ',
       category: 'Salad',
       price: 70.000,
       countInStock: 4,
