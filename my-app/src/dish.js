@@ -763,6 +763,19 @@ const dishes = [
       numReviews: 24,
       mon_an_kem: [],
     },
+    {
+      _id: 'salad05',
+      name: 'Salad thịt',
+      image: '/images/salad05.png',
+      ingredients:
+        'Rau các loại, cà chua, sốt Mayonaise, thịt',
+      category: 'Salad',
+      price: 70.000,
+      countInStock: 4,
+      rating: 4.5,
+      numReviews: 12,
+      mon_an_kem: [],
+    },
 
     /*----------------------------*/
     {
