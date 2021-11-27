@@ -12,7 +12,7 @@ function SeatChoose({ chosenSeat, setChosenSeat }) {
 
   const toggleDisplay = () => {
     setDisplay(!display)
-  } 
+  }  
   return (
     <>
       <InputGroup>

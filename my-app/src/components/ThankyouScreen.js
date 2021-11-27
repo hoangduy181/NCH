@@ -12,7 +12,7 @@ function ThankyouScreen({ isCheckedOut = true }) {
     let navigate = useNavigate()
     if (isCheckedOut === false) {
         navigate('/home')
-    }
+    } 
 
     return (
         <Row>
