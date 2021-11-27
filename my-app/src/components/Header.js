@@ -27,9 +27,9 @@ function Header({ isLogged, sendMsg, handleLogOut }) {
   }
 
   return (
+        <Container>
     <header>
       <Navbar variant="dark" bg="danger" expand="lg" collapseOnSelect fixed="top">
-        <Container>
           <Link to="/home" className='nav-link'>
             <Navbar.Brand href="/home" >
               <img
@@ -76,9 +76,9 @@ function Header({ isLogged, sendMsg, handleLogOut }) {
                 <Button variant="outline-success">Search</Button>
             </Form> */}
           </Navbar.Collapse>
-        </Container>
       </Navbar>
     </header>
+        </Container>
   )
 }
 

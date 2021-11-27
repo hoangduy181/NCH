@@ -37,10 +37,17 @@ function NewPwd({sendMsg}) {
     event.preventDefault();
     console.log(event.target[0].value)
     console.log(event.target[1].value)
+    let newPwd = event.target[0].value
     if (event.target[0].value === event.target[1].value) {
       sendMsg('Password changed', 'success')
       navigate('/signin')
       localStorage.setItem('ServerOTP', '{}')
+      let data = JSON.parse(localStorage.getItem('DatabaseUser'))
+
+      data.password = newPwd
+      localStorage.setItem('DatabaseUser', JSON.stringify(data))
+
+
       //handle doi mk
     }
 
@@ -71,9 +78,6 @@ function compareOtp() {
   if (clientOTP === serverOTP) return true
   return false
 }
-
-
-
 
 function InsertOTP({ handleVerfy, createServerOtp, sendMsg }) {
   return (
@@ -212,5 +216,6 @@ function ForgotPwd({sendMsg}) {
   )
 }
 
-export { createServerOtp }
+export {InsertOTP}
+export { compareOtp, createServerOtp }
 export default ForgotPwd

@@ -6,26 +6,37 @@ import { Container } from 'react-bootstrap';
 import './bootstrap.min.css'
 import CartScreen from './components/CartScreen';
 import SignInScreen from './components/SignInScreen'; 
+import SignUpScreen from './components/SignUpScreen'; 
 import { useState } from 'react';
 import {Toast, Row, Col, Button} from 'react-bootstrap'
 import ToastMsg from './components/ToastMsg';
 import CheckOutScreen from './components/CheckOutScreen';
 import ForgotPwd from './components/ForgotPwd';
+import Scrollbars from 'react-custom-scrollbars';
 
 
 function App() {
-
-  const [isLogged, setLogIn] = useState(false)
+  if (localStorage.getItem('User') === null) {
+    localStorage.setItem('User', 'false')
+  }
+  const [isLogged, setLogIn] = useState(() => {
+    return JSON.parse(localStorage.getItem('User'))
+  })
 
   const handleLogOut = () => {
+    sendMsg('Logged out!', 'success')
     console.log("handle logout")
-    if (isLogged === true)
-    setLogIn(false)
+    if (isLogged === true) {
+      localStorage.setItem('User', 'false')
+      setLogIn(false)
+    }
   }
-
+  
   const handleLogIn = () => {
-    if(isLogged === false)
-    setLogIn(true)
+  sendMsg('Logged in succesfully!', 'success')
+  if(isLogged === false) {
+    localStorage.setItem('User', 'true')
+    setLogIn(true) }
   }
   
   if (localStorage.getItem('Cart') === null) {
@@ -49,6 +60,12 @@ function App() {
 
     
     <Router>
+      {/* <Scrollbars style={{height: "100vh"}}
+          renderTrackHorizontal={props => <div {...props} className="track-horizontal"/>}
+          renderTrackVertical={props => <div {...props} className="track-vertical"/>}
+          renderThumbHorizontal={props => <div {...props} className="thumb-horizontal"/>}
+          renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+      > */}
       <Header isLogged={isLogged} sendMsg={sendMsg} handleLogOut={handleLogOut}/>
         <body style={{paddingTop: "4.5rem"}}>
         <ToastMsg toastMsg={toastMsg} closeToast={closeToast} variant={variant}/>
@@ -60,12 +77,14 @@ function App() {
               <Route path ="/menu" element={<MenuScreen sendMsg={sendMsg}/>} exact/>
               <Route path ="/cart" element={<CartScreen sendMsg={sendMsg}/>} exact/>
               <Route path ="/signin" element={<SignInScreen sendMsg={sendMsg} handleLogIn={handleLogIn}/>} exact/>
+              <Route path ="/signup" element={<SignUpScreen sendMsg={sendMsg}/>} exact/>
             </Routes>
           </Container>
         </main>
         </body>
         <Footer/>
-        
+        {/* </Scrollbars> */}
+
     </Router>
 	);
 }

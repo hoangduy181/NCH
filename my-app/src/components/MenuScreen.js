@@ -66,6 +66,8 @@ function Menu({ sendMsg, cataId = ''}) {
               <ProductCard product={product} setItem={setItem} setLgShow={setLgShow} addToCartHandler={addToCartHandler} />
             </Col>
           ))}
+        </Row>
+        <Row>
           <ProductModal lgShow={lgShow} setLgShow={setLgShow} product={itemToShow} sendMsg={sendMsg} />
         </Row>
       {/* </Scrollbars> */}

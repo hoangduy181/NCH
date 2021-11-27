@@ -12,6 +12,9 @@ let userAccount = JSON.parse(localStorage.getItem('DatabaseUser'))
       handleLogIn()
       navigate('/menu')
     }
+    else {
+      sendMsg('Please check your input again','warning')
+    }
   }
 
   const handleSubmit = (event) => {
