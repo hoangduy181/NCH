@@ -5,7 +5,7 @@ import logo from '../logo.png'
 
 function Header({ isLogged, sendMsg, handleLogOut }) {
 
-  console.log(isLogged)
+ // console.log(isLogged)
 
   const userButton = (isLogged) => {
     if (isLogged) {

@@ -1,8 +1,9 @@
 import React, { Component, useState } from 'react';
 import { Card, Row, Col, Button, FloatingLabel, Form, Container } from 'react-bootstrap';
 import OtpInput from 'react-otp-input';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './ForgotPwd.css'
+
 class OtpInputCpn extends Component {
   state = { otp: '' };
 
@@ -20,7 +21,7 @@ class OtpInputCpn extends Component {
         value={this.state.otp}
         onChange={this.handleChange}
         numInputs={6}
-        separator={<Col md={1}></Col>}
+        separator={<span></span>}
         isInputNum
         placeholder='000000'
         className='otp-input'
@@ -30,13 +31,16 @@ class OtpInputCpn extends Component {
   }
 }
 
-function NewPwd() {
+function NewPwd({sendMsg}) {
+  const navigate = useNavigate()
   const handleNewPw = (event) => {
     event.preventDefault();
     console.log(event.target[0].value)
     console.log(event.target[1].value)
     if (event.target[0].value === event.target[1].value) {
-      alert('doi mk thanh cong')
+      sendMsg('Password changed', 'success')
+      navigate('/signin')
+      localStorage.setItem('ServerOTP', '{}')
       //handle doi mk
     }
 
@@ -61,7 +65,17 @@ function NewPwd() {
   )
 }
 
-function InsertOTP({ handleVerfy, createServerOtp }) {
+function compareOtp() {
+  let clientOTP = JSON.parse(localStorage.getItem('ClientOTP')).otp
+  let serverOTP = JSON.parse(localStorage.getItem('ServerOTP')).otp
+  if (clientOTP === serverOTP) return true
+  return false
+}
+
+
+
+
+function InsertOTP({ handleVerfy, createServerOtp, sendMsg }) {
   return (
     <>
       <p className='text-center'>Please type in the OTP you received</p>
@@ -70,7 +84,7 @@ function InsertOTP({ handleVerfy, createServerOtp }) {
       </Row>
       <Row className='mx-auto'>
         <Col className='d-flex mb-3 text-center'>
-          <Button type='submit' className='btn-block mx-auto' onClick={() => handleVerfy()}>
+          <Button type='submit' className='btn-block mx-auto' onClick={() => handleVerfy({sendMsg})}>
             Verify OTP
           </Button>
         </Col>
@@ -82,6 +96,15 @@ function InsertOTP({ handleVerfy, createServerOtp }) {
       </Row>
     </>
   )
+}
+function createServerOtp() {
+  function getRandomInt(max) {
+    return (Math.floor(Math.random() * max) + 1)
+  }
+  let num = (getRandomInt(8) * 100000 + getRandomInt(8) * 10000 + getRandomInt(8) * 1000 + getRandomInt(8) * 100 + getRandomInt(8) * 10 + getRandomInt(8))
+  let data = { otp: JSON.stringify(num) }
+  localStorage.setItem('ServerOTP', JSON.stringify(data))
+  alert(`otp\n${num}`)
 }
 
 function InsertPhoneNumber({ handlePNSubmit }) {
@@ -108,53 +131,52 @@ function InsertPhoneNumber({ handlePNSubmit }) {
   )
 }
 
-function FPCardBody({ phase, handlePNSubmit, handleVerfy, createServerOtp }) {
+function FPCardBody({ phase, handlePNSubmit, handleVerfy, createServerOtp , sendMsg}) {
   if (phase === 1) return (<InsertPhoneNumber handlePNSubmit={handlePNSubmit} />)
-  else if (phase === 2) return (<InsertOTP handleVerfy={handleVerfy} createServerOtp={createServerOtp} />)
-  else if (phase === 3) return (<NewPwd />)
+  else if (phase === 2) return (<InsertOTP handleVerfy={handleVerfy} createServerOtp={createServerOtp} sendMsg={sendMsg}/>)
+  else if (phase === 3) return (<NewPwd sendMsg={sendMsg} />)
 }
 
-function ForgotPwd() {
+function ForgotPwd({sendMsg}) {
+
+  const [userPN, setUserPN] = useState('')
+
+  const confirmPN = (phoneNumber) => {
+    setUserPN(phoneNumber)
+  }
+
   localStorage.setItem('ClientOTP', '{}')
   if (localStorage.getItem('ServerOTP') === null) {
     localStorage.setItem('ServerOTP', '{}')
   }
 
-
-  const handleVerfy = () => {
-    //check
-    let clientOTP = JSON.parse(localStorage.getItem('ClientOTP')).otp
-    let serverOTP = JSON.parse(localStorage.getItem('ServerOTP')).otp
-    if (clientOTP === serverOTP) {
-      alert('oke')
-      setPhase(3)
-    }
-    else {
-      alert('sai')
-    }
-  }
-
-  const [phase, setPhase] = useState(3)
+  const [phase, setPhase] = useState(1)
   // let tempPN = 
   // const [phoneNumber, setPN] = useState(tempPN)
   const handlePNSubmit = (event) => {
     event.preventDefault();
     console.log(event.target[0].value)
+    if (event.target[0].value.length === 10) {
     //checkk...phone number
-
+    confirmPN(event.target[0].value)
     //create serverOTP
-    let data = { otp: JSON.stringify(123456) }
-    localStorage.setItem('ServerOTP', JSON.stringify(data))
+    createServerOtp()
     setPhase(2)
+    }
+    else {
+      sendMsg('wrong type of phonenumber', 'warning')
+    }
   }
 
-  const createServerOtp = () => {
-    let data = { otp: JSON.stringify(225464) }
-    localStorage.setItem('ServerOTP', JSON.stringify(data))
+  const handleVerfy = () => {
+    if (compareOtp()) {
+      sendMsg('OTP verified', 'success')
+      setPhase(3)
+    }
+    else {
+      alert('ko oke', 'warning')
+    }
   }
-
-
-
 
   return (
     <Container>
@@ -180,7 +202,8 @@ function ForgotPwd() {
                 phase={phase}
                 handlePNSubmit={handlePNSubmit}
                 handleVerfy={handleVerfy}
-                createServerOtp={createServerOtp} />
+                createServerOtp={createServerOtp}
+                sendMsg={sendMsg} />
             </Card.Body>
           </Card>
         </Col>
@@ -189,4 +212,5 @@ function ForgotPwd() {
   )
 }
 
+export { createServerOtp }
 export default ForgotPwd

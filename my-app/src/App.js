@@ -55,7 +55,7 @@ function App() {
         <main className='py-3'>
           <Container>
             <Routes>
-              <Route path = "/forgotpwd" element={<ForgotPwd/>}/>
+              <Route path = "/forgotpwd" element={<ForgotPwd sendMsg={sendMsg}/>}/>
               <Route path = "/checkout" element={<CheckOutScreen/>}/>
               <Route path ="/menu" element={<MenuScreen sendMsg={sendMsg}/>} exact/>
               <Route path ="/cart" element={<CartScreen sendMsg={sendMsg}/>} exact/>
