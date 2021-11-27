@@ -21,7 +21,7 @@ function ThankyouScreen({ isCheckedOut = true }) {
                 <hr />
                 <Row>
                     <Col sm={12} md={6} className='d-flex flex-row'>
-                        <Link to='/menu' className='nav-link' onClick={() => { localStorage.setItem('Cart', '{}') }}>
+                        <Link to='/menu' className='nav-link' onClick={() => { localStorage.setItem('Cart', '[]') }}>
                             <h2><i class="fas fa-arrow-left"></i> go to menu</h2>
                             </Link>
                     </Col>
