@@ -776,6 +776,19 @@ const dishes = [
       numReviews: 12,
       mon_an_kem: [],
     },
+    {
+      _id: 'salad06',
+      name: 'Salad nấm',
+      image: '/images/salad06.png',
+      ingredients:
+        'Rau các loại, cà chua, bơ, nấm đông cô, nấm hương, ức gà',
+      category: 'Salad',
+      price: 50.000,
+      countInStock: 3,
+      rating: 5,
+      numReviews: 34,
+      mon_an_kem: [],
+    },
 
     /*----------------------------*/
     {
