@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom';
 import Header from './components/Header'
 import Footer from './components/Footer';
 import MenuScreen from './components/MenuScreen';
@@ -13,9 +13,19 @@ import ToastMsg from './components/ToastMsg';
 import CheckOutScreen from './components/CheckOutScreen';
 import ForgotPwd from './components/ForgotPwd';
 import Scrollbars from 'react-custom-scrollbars';
+import ThankyouScreen from './components/ThankyouScreen';
+import FeedbackScreen from './components/FeedbackScreen';
 
 
 function App() {
+
+  // const [checkedOut, setCheckedOut] = useState(false)
+  // const [feedback, setFeedback] = useState(false)
+
+  // const setCO = () => {
+  //   setCheckedOut(true)
+  // }
+
   if (localStorage.getItem('User') === null) {
     localStorage.setItem('User', 'false')
   }
@@ -78,6 +88,9 @@ function App() {
               <Route path ="/cart" element={<CartScreen sendMsg={sendMsg}/>} exact/>
               <Route path ="/signin" element={<SignInScreen sendMsg={sendMsg} handleLogIn={handleLogIn}/>} exact/>
               <Route path ="/signup" element={<SignUpScreen sendMsg={sendMsg}/>} exact/>
+              <Route path ="/thankyou" element={<ThankyouScreen/>} exact/>
+              <Route path ="/feedback" element={<FeedbackScreen sendMsg={sendMsg}/>} exact/>
+              <Route path ="/" element={<Navigate to='/home'/>}/>
             </Routes>
           </Container>
         </main>
