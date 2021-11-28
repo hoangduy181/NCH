@@ -127,6 +127,8 @@ function CartScreen({sendMsg}) {
         <Scrollbars
           autoHeight
           autoHeightMin={500}
+          renderThumbHorizontal={props => <div {...props} className="thumb-horizontal"/>}
+          renderTrackHorizontal={props => <div {...props} className="track-vertical"/>}
         >
 
           {cartItems.length === 0 ? (<h2>

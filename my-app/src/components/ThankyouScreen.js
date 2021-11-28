@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col , Image} from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 function ThankyouScreen({ isCheckedOut = true }) {
     useEffect(() => {
@@ -15,9 +15,10 @@ function ThankyouScreen({ isCheckedOut = true }) {
     } 
 
     return (
+        <>
         <Row>
             <Col>
-                <h1 className='text-center'>Thank you for choosing us</h1>
+                <h1 className='text-center pt-3' >Thank you for choosing us</h1>
                 <hr />
                 <Row>
                     <Col sm={12} md={6} className='d-flex flex-row'>
@@ -37,6 +38,12 @@ function ThankyouScreen({ isCheckedOut = true }) {
                 </Row>
             </Col>
         </Row>
+        <Row>
+            <Col style={{overflow: "hidden"}} className='py-4 d-flex'>
+            <Image src='images/aikoooo.jpg' className='mx-auto rotate'style={{borderRadius: "50%"}}/>
+            </Col>
+        </Row>
+        </>
     )
 }
 
