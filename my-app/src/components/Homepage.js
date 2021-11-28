@@ -3,7 +3,6 @@ import { Card, Row, Col, Button, Form, Container, ToggleButton, ButtonGroup } fr
 
 function Homepage() {
     return (
-
     <div class="container">
         <div class="home__container bd-container bd-grid row flex-lg-row-reverse align-items-center g-5 py-5 px-auto">
             <div class="col-15 col-sm-8 col-lg-6">
@@ -78,10 +77,10 @@ function Homepage() {
                 <div class="contact__data">
                     <span class="section-subtitle contact__initial">Trong trường hợp quý khách có nhu cầu đặt trước bàn ăn hoặc phản ánh về chất lượng món ăn, thái độ phục vụ của nhân viên, hoặc bất cứ bất cập nào quý khách gặp phải, vui lòng liên liên hệ nhà hàng.</span>
                     <ul>
-                        <li>Ho Chi Minh City - Vietnam</li>
-                        <li>noichaoheo#7605</li>
-                        <li>666 - 3629</li>
-                        <li>nchrestaurant@gmail.com</li>
+                    <li>Address: Ho Chi Minh City - Vietnam</li>
+                    <li>Discord: noichaoheo#7605</li>
+                    <li>Phone number: 666 - 3629</li>
+                    <li>Email: nchrestaurant@gmail.com</li>
                     </ul>
                 </div>
             </div>

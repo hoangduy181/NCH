@@ -784,7 +784,7 @@ const dishes = [
         'Rau các loại, cà chua, bơ, nấm đông cô, nấm hương, ức gà',
       category: 'Salad',
       price: 50.000,
-      countInStock: 3,
+      countInStock: 10,
       rating: 5,
       numReviews: 34,
       mon_an_kem: [],
@@ -1024,7 +1024,7 @@ const dishes = [
     {
       _id: 'tiny01',
       name: 'Tiny barbecue',
-      image: '/images/ak02.png',
+      image: '/images/tiny01.png',
       ingredients:
         'Thịt xiên, ớt chuông, khoai tây, rau củ các loại',
       category: 'sub2',
