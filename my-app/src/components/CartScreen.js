@@ -9,7 +9,7 @@ function getProductById({ item }) {
   let product = products.find((p) => p._id === item._id)
   return product;
 }
-
+//update CartScreen
 
 function CartItem({ item, removeItem, setTotal , sendMsg}) {
   let product = products.find((p) => p._id === item._id)
