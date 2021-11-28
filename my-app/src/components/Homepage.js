@@ -19,7 +19,9 @@ function Homepage() {
             </div>
             <div className="col-lg-6">
                 <h1 className="display-1 fw-bold lh-1 mb-3">Tasty food</h1>
-                <p className="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                <p className="lead">We have some exciting ongoing offers as part of our introductory period in this neighborhood. Drop by anytime and check out our combinations that offer you a varied list of cuisines, all of the pizzas, with the awesome accompaniment of exotic sauces and grilled vegetables of a hundred different kinds.
+
+                We have some of the finest workers and staff employed in our establishment, and we guarantee you the best experience of eating out—only at NCH!</p>
                 <div className="d-grid gap-2 d-md-flex justify-content-md-start">
                     <Link to = '/menu'>
                     <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">Xem thực đơn</button>
@@ -31,8 +33,10 @@ function Homepage() {
         <div className="row featurette text-lg-start py-5 px-auto" style={{overflow: "hidden"}}>
             <h2 className="pb-2 border-bottom">Ăn hoặc ăn đấm?</h2>
             <div className="col-md-7 order-md-2 text-lg-start p-2 d-flex flex-column-reverse " >
-                <h2 className="featurette-heading display-4 fw-bold lh-1 mb-3 text-white">Oh yeah, it’s that good.</h2>
-                <p className="lead text-white">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+                <h2 className="featurette-heading display-4 fw-bold lh-1 mb-3 text-white">Service & Excellent.</h2>
+                <p className="lead text-white">
+                In our restaurant, you can try quality dishes cooked by the owner and his team. Fresh seasonal products are available on every menu.
+                The restaurant is open from 08:00 to 23:00. Meals are served from 12:00 to 14:00 and from 18:30 to 21:00. The restaurant is closed on Mondays and Tuesdays and also on Sunday evenings in winter.</p>
             </div>
             <div className="col-md-5 order-md-1 p-1">
                 <img src="./images/home2.jpg" alt="gr" style={{width: "90vw", objectFit: "cover"}} className='mx-auto'/>
