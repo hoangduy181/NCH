@@ -6,13 +6,13 @@ function ToastMsg({toastMsg, closeToast, variant}) {
     <Toast  show={toastMsg !== null}
             onClose={closeToast}
             style={{position: "fixed", top: "10vh", right: "0", zIndex: "100000"}}
-            delay={1000}
+            delay={1200}
             autohide
             bg={variant}
             >
       <Toast.Header>
         <strong className="me-auto">NCH</strong>
-        <small>right now</small>
+        <small>just now</small>
       </Toast.Header>
       <Toast.Body 
         style={{color: "#000"}}
