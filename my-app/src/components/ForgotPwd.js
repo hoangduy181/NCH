@@ -52,7 +52,7 @@ function NewPwd({sendMsg}) {
     }
 
     else {
-      alert('doi ko thanh')
+      sendMsg('The password does not match, please check again')
     }
   }
   return (
@@ -88,12 +88,12 @@ function InsertOTP({ handleVerfy, createServerOtp, sendMsg }) {
       </Row>
       <Row className='mx-auto'>
         <Col className='d-flex mb-3 text-center'>
-          <Button type='submit' className='btn-block mx-auto' onClick={() => handleVerfy({sendMsg})}>
+          <Button type='submit' variant='dark' className='btn-block mx-auto' onClick={() => handleVerfy({sendMsg})}>
             Verify OTP
           </Button>
         </Col>
         <Col className='d-flex mb-3 text-center'>
-          <Button type='submit' className='btn-block mx-auto' onClick={() => createServerOtp()}>
+          <Button type='submit' variant='dark' className='btn-block mx-auto' onClick={() => createServerOtp()}>
             Resend OTP
           </Button>
         </Col>
@@ -126,7 +126,7 @@ function InsertPhoneNumber({ handlePNSubmit }) {
           </FloatingLabel>
         </Col>
         <Col md={3} className='d-flex mb-3'>
-          <Button type='submit' className='btn-block mx-auto'>
+          <Button type='submit' className='btn-block mx-auto' variant='dark'>
             Send OTP
           </Button>
         </Col>
