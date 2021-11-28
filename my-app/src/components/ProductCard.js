@@ -15,7 +15,7 @@ function ProductCard({ product, setItem, setLgShow, addToCartHandler }) {
   }
 
   return (
-    <Card className="my-3 p-3 rounded" >
+    <Card className="my-3 p-1 pt-2 rounded" >
 
       <Card.Img src={product.image} variant='top' onClick={handleClick} style={{ width: "100%", height: "25vh", objectFit: "cover" }} />
 
@@ -27,9 +27,9 @@ function ProductCard({ product, setItem, setLgShow, addToCartHandler }) {
           {product.price.toFixed(3)} VND
         </Card.Text>
       </Card.Body>
-      <Card.Footer style={{ textAlign: "end", backgroundColor: "#FFFFFF" }}>
+      <Card.Footer style={{ textAlign: "end", backgroundColor: "#FFFFFF", padding: ".25rem 1rem" }}>
         <Button onClick={() => addToCartHandler(cartItem)} disabled={(product.countInStock === 0)}>
-          Add to cart
+          <i class="fas fa-shopping-cart"></i> Add to cart
         </Button>
       </Card.Footer>
 

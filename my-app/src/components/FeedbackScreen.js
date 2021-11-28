@@ -13,7 +13,7 @@ function FeedbackItem({ item }) {
   const handleRating = (rate) => {
     setRating(rate)
     // Some logic
-  }
+  } 
   return (
     <ListGroup.Item key={product._id}>
       <Row>

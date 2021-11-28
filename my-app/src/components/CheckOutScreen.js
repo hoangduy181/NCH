@@ -27,7 +27,7 @@ function CheckOutScreen({ }) {
 
   const handleSubmit = () => {
     let msg = "thanh toán"
-    alert(`thanh toán ${finallyTotal.toFixed(3)} VND!!!!!!`)
+    alert(`thanh toán ${finallyTotal < 1000 ? finallyTotal.toFixed(0)+'.000' : (finallyTotal/1000).toFixed(3)+'.000' } VND!!!!!!`)
     navigate("/thankyou")
   }
   return (
@@ -108,7 +108,7 @@ function CheckOutScreen({ }) {
                     </Col>
                     <Col xs={4} sm={5} md={4}>
                       <Card.Subtitle>
-                        {total.toFixed(3)} VND
+                      {total < 1000 ? total.toFixed(0)+'.000' : (total/1000).toFixed(3)+'.000' } VND
                       </Card.Subtitle>
                     </Col>
                   </Row>
@@ -153,7 +153,7 @@ function CheckOutScreen({ }) {
                     </Col>
                     <Col xs={4} sm={5} md={4}>
                       <Card.Subtitle>
-                        {finallyTotal.toFixed(3)} VND
+                      {finallyTotal < 1000 ? finallyTotal.toFixed(0)+'.000' : (finallyTotal/1000).toFixed(3)+'.000' } VND
                       </Card.Subtitle>
                     </Col>
                   </Row>

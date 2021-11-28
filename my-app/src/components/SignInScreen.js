@@ -3,7 +3,7 @@ import { FloatingLabel, Form, Modal, Row, Col, Card ,Container, Button} from "re
 import { Link, useNavigate } from "react-router-dom";
 function SignInScreen({sendMsg, handleLogIn}) {
 
-let userAccount = JSON.parse(localStorage.getItem('DatabaseUser'))
+  let userAccount = JSON.parse(localStorage.getItem('DatabaseUser'))
 
   const navigate = useNavigate()
   const handleSignIn = (phoneNumber, password) => {
@@ -77,12 +77,12 @@ let userAccount = JSON.parse(localStorage.getItem('DatabaseUser'))
           </Col>
             </Form>
           </Card.Body>
-          <h5 className='text-center'>Or</h5>
+          <h5 className='text-center'>-----Or-----</h5>
           <Button className='m-3 mt-0 mb-1 btn-outline-info' variant='light' >
           <i class="fab fa-facebook-f p-1"></i>
           Login with Facebook
           </Button>
-          <Button className='m-3 mt-1 mb-0 btn-outline-secondary' variant='dark'>
+          <Button className='m-3 mt-1 mb-3 btn-outline-secondary' variant='dark'>
           <i class="fab fa-google p-1"></i>
             Login with Google
           </Button>

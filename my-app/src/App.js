@@ -34,17 +34,17 @@ function App() {
   })
 
   const handleLogOut = () => {
-    sendMsg('Logged out!', 'success')
-    console.log("handle logout")
     if (isLogged === true) {
+      sendMsg('Logged out!', 'success')
+      console.log("handle logout")
       localStorage.setItem('User', 'false')
       setLogIn(false)
     }
   }
   
   const handleLogIn = () => {
-  sendMsg('Logged in succesfully!', 'success')
-  if(isLogged === false) {
+    if(isLogged === false) {
+    sendMsg('Logged in succesfully!', 'success')
     localStorage.setItem('User', 'true')
     setLogIn(true) }
   }
@@ -77,7 +77,7 @@ function App() {
           renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
       > */}
       <Header isLogged={isLogged} sendMsg={sendMsg} handleLogOut={handleLogOut}/>
-        <body style={{paddingTop: "4.5rem"}}>
+        <body style={{paddingTop: "3.5rem"}}>
         <ToastMsg toastMsg={toastMsg} closeToast={closeToast} variant={variant}/>
         <main className='py-3'>
           <Container>

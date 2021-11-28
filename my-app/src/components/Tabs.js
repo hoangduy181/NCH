@@ -47,6 +47,12 @@ function MenuTabs({sendMsg}) {
         <Tab eventKey="salad" title="Salad">
         <Menu sendMsg={sendMsg} cataId='Salad'/>
         </Tab>
+        <Tab eventKey="sushi" title="Sushi">
+        <Menu sendMsg={sendMsg} cataId='Sushi'/>
+        </Tab>
+        <Tab eventKey="beefsteak" title="Beefsteak">
+        <Menu sendMsg={sendMsg} cataId='Beefsteak'/>
+        </Tab>
       </Tabs>
     );
   }

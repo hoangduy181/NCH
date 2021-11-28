@@ -15,8 +15,10 @@ function Menu({ sendMsg, cataId = ''}) {
   //     top: 0,
   //     left: 0,
   //     behavior: "smooth"
+  //     right: 0
   //   })
   // }, [])
+  // 
   let products = dishes.slice()
   if (cataId !== '') products = dishes.filter(e => e.category === cataId)
 

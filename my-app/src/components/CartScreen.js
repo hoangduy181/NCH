@@ -10,6 +10,7 @@ function getProductById({ item }) {
   return product;
 }
 
+
 function CartItem({ item, removeItem, setTotal , sendMsg}) {
   let product = products.find((p) => p._id === item._id)
   console.log(product)
@@ -140,7 +141,7 @@ function CartScreen({sendMsg}) {
             <ListGroup variant='flush'>
               <ListGroup.Item>
                 <h2>Total {countQty} item{(countQty > 1) && 's'}</h2>
-                {total.toFixed(3)} VND
+                {total < 1000 ? total.toFixed(0)+'.000' : (total/1000).toFixed(3)+'.000' } VND
               </ListGroup.Item>
               <ListGroup.Item className="d-grid gap-2">
                 
