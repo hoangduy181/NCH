@@ -186,7 +186,7 @@ function ForgotPwd({sendMsg}) {
     <Container>
       <Row>
         <Col xs={2} sm={2} md={2}>
-          <Link to='/home' className='nav-link'>
+          <Link to='/signin' className='nav-link'>
             <Button variant='dark'>
               Go Back
             </Button>
