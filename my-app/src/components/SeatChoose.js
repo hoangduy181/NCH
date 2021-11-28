@@ -23,7 +23,7 @@ function SeatChoose({ chosenSeat, setChosenSeat }) {
 
         </FormControl>
         <Button
-          variant='info'
+          variant='secondary'
           onClick={() => toggleDisplay()}
         >
           Change table
@@ -33,7 +33,7 @@ function SeatChoose({ chosenSeat, setChosenSeat }) {
         <Row className="mt-3">
           {Array.from({ length: 24 }).map((_, y) => (
             <Col xs={2} sm={2} md={1} className="d-grid gap-0" key={y}>
-              <Button className='btn-block mt-2' style={{paddingLeft: "0",paddingRight: "0"}} onClick={() => handleClick(y+1)}>
+              <Button className='btn-block mt-2' variant='outline-secondary' style={{paddingLeft: "0",paddingRight: "0"}} onClick={() => handleClick(y+1)}>
                 {y+1}
               </Button>
             </Col>

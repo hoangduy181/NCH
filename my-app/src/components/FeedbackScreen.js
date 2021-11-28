@@ -93,7 +93,7 @@ function FeedbackScreen({ sendMsg }) {
               </Scrollbars>
             </Card.Body>
               <Card.Footer className='d-flex flex-row-reverse'>
-                <Button onClick={() => hanldeSendFB()}>
+                <Button onClick={() => hanldeSendFB()} variant='dark'>
                   Send feedback
                 </Button>
               </Card.Footer></>)}
@@ -101,8 +101,8 @@ function FeedbackScreen({ sendMsg }) {
             <>
               <Card.Body>
                 <Col className='justify-content-center'>
-                  <h3 className='p-2'>Thanks for your feedback</h3>
-                  <Link to='/menu' style={{textDecoration:"none"}}><h4 className='p-2'>Go to menu</h4></Link>
+                  <h2 className='p-2'>Thanks for your feedback</h2>
+                  <Link to='/menu' style={{textDecoration:"none"}}><h3 className='p-2'>Go to menu</h3></Link>
                 </Col>
               </Card.Body>
 

@@ -3,7 +3,7 @@ import { Container, Row, Col, Nav } from "react-bootstrap";
 
 function Footer() {
   return (
-    <footer>
+    <footer style={{}}>
       <Row className = "bg-danger">
         <Col>
       <Nav class="navbar justify-content-center pb-3 mb-3" >

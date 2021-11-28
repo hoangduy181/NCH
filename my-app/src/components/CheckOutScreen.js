@@ -161,7 +161,7 @@ function CheckOutScreen({ }) {
               </Row>
             </Card.Body>
             <Card.Footer className="text-center">
-              <Button type="submit" onClick={() => handleSubmit()}>
+              <Button type="submit" onClick={() => handleSubmit()} variant='dark'>
                 Check out
               </Button>
             </Card.Footer>

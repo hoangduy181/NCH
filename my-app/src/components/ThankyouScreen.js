@@ -22,12 +22,16 @@ function ThankyouScreen({ isCheckedOut = true }) {
                 <Row>
                     <Col sm={12} md={6} className='d-flex flex-row'>
                         <Link to='/menu' className='nav-link' onClick={() => { localStorage.setItem('Cart', '[]') }}>
-                            <h2><i class="fas fa-arrow-left"></i> go to menu</h2>
+                    <h2>
+                            <i class="fas fa-arrow-left"></i> go to menu
+                            </h2>
                             </Link>
                     </Col>
                     <Col sm={12} md={6} className='d-flex flex-row-reverse'>
                         <Link to='/feedback' className='nav-link'>
-                            <h2>send feedback <i class="fas fa-arrow-right"></i></h2>
+                            <h2>
+                                send feedback <i class="fas fa-arrow-right"></i>
+                                </h2>
                             </Link>
                     </Col>
                 </Row>

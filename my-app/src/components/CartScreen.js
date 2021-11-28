@@ -31,7 +31,7 @@ function CartItem({ item, removeItem, setTotal , sendMsg}) {
         </Col>
         <Col xs={3} sm={3} md={1} className='mx-auto'>
           <Button
-            variant="outline-primary"
+            variant="outline-danger"
             onClick={() => {
               removeItem(item)
               sendMsg('Deleted successfully', 'warning')}}>
@@ -119,7 +119,7 @@ function CartScreen({sendMsg}) {
           <Row>
           <Col md={10}><h1>YOUR CART</h1></Col>
           <Col className='d-flex justify-content-end'>
-            <Button className='my-auto' style={{height: "2.5rem"}} onClick={()=>handleClear()} disabled={cartItems.length === 0}>
+            <Button className='my-auto' variant='outline-danger' style={{height: "2.5rem"}} onClick={()=>handleClear()} disabled={cartItems.length === 0}>
               Clear
             </Button>
           </Col>
@@ -146,7 +146,7 @@ function CartScreen({sendMsg}) {
               <ListGroup.Item className="d-grid gap-2">
                 
                   
-                  <Button type='button' className='btn-block' disabled={cartItems.length === 0} onClick={() => navigate('/checkout')}>
+                  <Button type='button' className='btn-block btn-dark' disabled={cartItems.length === 0} onClick={() => navigate('/checkout')}>
                     Proceed to checkout
                   </Button>
                 

@@ -78,11 +78,11 @@ function SignInScreen({sendMsg, handleLogIn}) {
             </Form>
           </Card.Body>
           <h5 className='text-center'>-----Or-----</h5>
-          <Button className='m-3 mt-0 mb-1 btn-outline-info' variant='light' >
+          <Button className='m-3 mt-0 mb-1 btn-outline-info' variant='dark' >
           <i class="fab fa-facebook-f p-1"></i>
           Login with Facebook
           </Button>
-          <Button className='m-3 mt-1 mb-3 btn-outline-secondary' variant='dark'>
+          <Button className='m-3 mt-1 mb-3 btn-outline-danger' variant='dark'>
           <i class="fab fa-google p-1"></i>
             Login with Google
           </Button>

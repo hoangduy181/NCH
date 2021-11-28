@@ -1,18 +1,8 @@
 main {
   min-height: 80vh;
+  /* background-color: #a9493c; */
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent; 
-}
- 
-::-webkit-scrollbar-thumb {
-  background: transparent;
-}
 
 .footer-text {
   color: #f9c846!important;

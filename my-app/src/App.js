@@ -15,6 +15,7 @@ import ForgotPwd from './components/ForgotPwd';
 import Scrollbars from 'react-custom-scrollbars';
 import ThankyouScreen from './components/ThankyouScreen';
 import FeedbackScreen from './components/FeedbackScreen';
+import Homepage from './components/Homepage';
 
 
 function App() {
@@ -70,18 +71,19 @@ function App() {
 
     
     <Router>
-      {/* <Scrollbars style={{height: "100vh"}}
+      <Scrollbars style={{height: "100vh"}}
           renderTrackHorizontal={props => <div {...props} className="track-horizontal"/>}
           renderTrackVertical={props => <div {...props} className="track-vertical"/>}
           renderThumbHorizontal={props => <div {...props} className="thumb-horizontal"/>}
           renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-      > */}
+      >
       <Header isLogged={isLogged} sendMsg={sendMsg} handleLogOut={handleLogOut}/>
         <body style={{paddingTop: "3.5rem"}}>
         <ToastMsg toastMsg={toastMsg} closeToast={closeToast} variant={variant}/>
         <main className='py-3'>
           <Container>
             <Routes>
+              <Route path ="/home" element={<Homepage className='homepage-screen'/>} exact/>
               <Route path = "/forgotpwd" element={<ForgotPwd sendMsg={sendMsg}/>}/>
               <Route path = "/checkout" element={<CheckOutScreen/>}/>
               <Route path ="/menu" element={<MenuScreen sendMsg={sendMsg}/>} exact/>
@@ -96,7 +98,7 @@ function App() {
         </main>
         </body>
         <Footer/>
-        {/* </Scrollbars> */}
+        </Scrollbars>
 
     </Router>
 	);

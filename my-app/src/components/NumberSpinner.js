@@ -42,7 +42,7 @@ function NumberSpinner({item, onCart=false, setTotal, setNumberModal}) {
       <Button 
         id="toggle-check"
         type="checkbox"
-        variant="outline-primary"
+        variant="outline-dark"
         onClick={handleDecrease}>
         <i class="fa fa-minus" aria-hidden="true"></i>
       </Button>  
@@ -51,12 +51,12 @@ function NumberSpinner({item, onCart=false, setTotal, setNumberModal}) {
         type = "number"
         className='text-center'
         readOnly
-        style = {{borderRadius:"0",padding: "0", textAlign:"center"}}>
+        style = {{borderRadius:"0",padding: "0", textAlign:"center", border: "1px solid #343a40"}}>
       </FormControl>
       <Button         
         id="toggle-check"
         type="checkbox"
-        variant="outline-primary"
+        variant="outline-dark"
         onClick={handleIncrease}>
         <i class="fa fa-plus" aria-hidden="true"></i>
       </Button>

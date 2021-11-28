@@ -178,7 +178,7 @@ function ForgotPwd({sendMsg}) {
       setPhase(3)
     }
     else {
-      alert('ko oke', 'warning')
+      sendMsg('OTP not match', 'warning')
     }
   }
 
