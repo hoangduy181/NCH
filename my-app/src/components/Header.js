@@ -28,7 +28,7 @@ function Header({ isLogged, sendMsg, handleLogOut }) {
 
   return (
         <Container>
-    <header>
+    <header style={{maxWidth: "calc(100vw - 17px)"}}>
       <Navbar variant="dark" bg="danger" expand="lg" collapseOnSelect fixed="top">
           <Link to="/home" className='nav-link'>
             <Navbar.Brand href="/home" >
@@ -53,7 +53,7 @@ function Header({ isLogged, sendMsg, handleLogOut }) {
               <Link to="/menu" className='nav-link'>
                 <Nav.Link href="/menu" activeKey="/menu">Menu</Nav.Link>
               </Link>
-              <Link to="/aboutus" className='nav-link me-auto my-2 my-lg-0'>
+              <Link to="/aboutus" className='nav-link me-auto my-2 my-lg-0' style={{pointerEvents: "none"}}>
                 <Nav.Link href="/aboutus" activeKey="/aboutus" disabled>About us</Nav.Link>
               </Link>
               <Link to="/cart" className='nav-link'>

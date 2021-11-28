@@ -9,9 +9,9 @@ function CarouselBar() {
           src="./images/15-01.png"
           alt="First slide"
         />
-        <Carousel.Caption >
-          <h2 style={{color:"#fff"}}>First slide label</h2>
-          <h3 style={{color:"#fff"}}>Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
+        <Carousel.Caption style={{textAlign: "left"}}>
+          <h2 style={{color:"#fff"}}>Salad</h2>
+          <h3 style={{color:"#fff"}}>tươi, ngon, đầy đủ dinh dưỡng</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -22,8 +22,8 @@ function CarouselBar() {
         />
 
         <Carousel.Caption style={{textAlign: "right"}}>
-          <h2 style={{color:"#fff"}}>First slide label</h2>
-          <h3 style={{color:"#fff"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+          <h2 style={{color:"#fff"}}>Bánh ngọt</h2>
+          <h3 style={{color:"#fff"}}>hài lòng ngay cả người khó tính nhất</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -34,9 +34,9 @@ function CarouselBar() {
 
         />
 
-        <Carousel.Caption>
-          <h2>First slide label</h2>
-          <h3>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</h3>
+        <Carousel.Caption >
+          <h2 style={{color:"#fff"}}>Hải sản</h2>
+          <h3 style={{color:"#fff"}}>đem đến một trải nghiệm hoàn toàn mới</h3>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

@@ -52,7 +52,7 @@ function NewPwd({sendMsg}) {
     }
 
     else {
-      sendMsg('The password does not match, please check again')
+      sendMsg('The password does not match, please check again','warning')
     }
   }
   return (
