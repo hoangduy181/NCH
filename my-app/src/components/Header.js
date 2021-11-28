@@ -54,7 +54,7 @@ function Header({ isLogged, sendMsg, handleLogOut }) {
                 <Nav.Link href="/menu" activeKey="/menu">Menu</Nav.Link>
               </Link>
               <Link to="/aboutus" className='nav-link me-auto my-2 my-lg-0'>
-                <Nav.Link href="/aboutus" activeKey="/aboutus">About us</Nav.Link>
+                <Nav.Link href="/aboutus" activeKey="/aboutus" disabled>About us</Nav.Link>
               </Link>
               <Link to="/cart" className='nav-link'>
                 <Nav.Link href="/cart" activeKey="/cart">
