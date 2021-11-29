@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "react-otp-input": "^2.4.0"
+    "react-otp-input": "^2.4.0",
+    "react-scripts": "^4.0.3"
   }
 }
